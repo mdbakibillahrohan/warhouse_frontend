@@ -1,11 +1,12 @@
 import { lazy, Suspense } from "react";
-import { Spin } from "antd";
+import Skeleton from "react-loading-skeleton";
 import type { RouteObject } from "react-router";
-import PickingPage from "../pages/PickingPage";
-import PutawayPage from "../pages/PutawayPage";
-import ReportsPage from "../pages/ReportPage";
-import ShippingPage from "../pages/ShippingPage";
-import PackingPage from "../pages/PackingPage";
+
+const PickingPage = lazy(() => import("../pages/PickingPage"));
+const PutawayPage = lazy(() => import("../pages/PutawayPage"));
+const ReportsPage = lazy(() => import("../pages/ReportPage"));
+const ShippingPage = lazy(() => import("../pages/ShippingPage"));
+const PackingPage = lazy(() => import("../pages/PackingPage"));
 
 const DashboardPage = lazy(() => import("../pages/DashboardPage"));
 const ReceivingConsignmentPage = lazy(
@@ -26,7 +27,9 @@ const MainRouter: RouteObject[] = [
     element: (
       <Suspense
         fallback={
-          <Spin fullscreen tip="Loading the system. Just a moment please...." />
+          <div>
+            <Skeleton count={70} />
+          </div>
         }
       >
         <DashboardPage />
@@ -38,7 +41,9 @@ const MainRouter: RouteObject[] = [
     element: (
       <Suspense
         fallback={
-          <Spin fullscreen tip="Loading the system. Just a moment please...." />
+          <div>
+            <Skeleton count={70} />
+          </div>
         }
       >
         <ReceivingConsignmentPage />
@@ -50,7 +55,9 @@ const MainRouter: RouteObject[] = [
     element: (
       <Suspense
         fallback={
-          <Spin fullscreen tip="Loading the system. Just a moment please...." />
+          <div>
+            <Skeleton count={70} />
+          </div>
         }
       >
         <QualityControlPage />
@@ -62,7 +69,9 @@ const MainRouter: RouteObject[] = [
     element: (
       <Suspense
         fallback={
-          <Spin fullscreen tip="Loading the system. Just a moment please...." />
+          <div>
+            <Skeleton count={70} />
+          </div>
         }
       >
         <InventoryManagementPage />
@@ -74,7 +83,9 @@ const MainRouter: RouteObject[] = [
     element: (
       <Suspense
         fallback={
-          <Spin fullscreen tip="Loading the system. Just a moment please...." />
+          <div>
+            <Skeleton count={70} />
+          </div>
         }
       >
         <PickingPage />
@@ -86,7 +97,9 @@ const MainRouter: RouteObject[] = [
     element: (
       <Suspense
         fallback={
-          <Spin fullscreen tip="Loading the system. Just a moment please...." />
+          <div>
+            <Skeleton count={70} />
+          </div>
         }
       >
         <PutawayPage />
@@ -98,7 +111,9 @@ const MainRouter: RouteObject[] = [
     element: (
       <Suspense
         fallback={
-          <Spin fullscreen tip="Loading the system. Just a moment please...." />
+          <div>
+            <Skeleton count={70} />
+          </div>
         }
       >
         <ReportsPage />
@@ -110,7 +125,9 @@ const MainRouter: RouteObject[] = [
     element: (
       <Suspense
         fallback={
-          <Spin fullscreen tip="Loading the system. Just a moment please...." />
+          <div>
+            <Skeleton count={70} />
+          </div>
         }
       >
         <ShippingPage />
@@ -122,7 +139,9 @@ const MainRouter: RouteObject[] = [
     element: (
       <Suspense
         fallback={
-          <Spin fullscreen tip="Loading the system. Just a moment please...." />
+          <div>
+            <Skeleton count={70} />
+          </div>
         }
       >
         <PackingPage />
